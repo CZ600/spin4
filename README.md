@@ -7,42 +7,42 @@
 
 Read Paper: [Link](https://arxiv.org/abs/2109.07701)
 
-**Accepted** for presentation at the 2022 IEEE International Conference on Robotics and Automation (ICRA), May 23-27, 2022, Philadelphia (PA), USA.
+## Windows + DeepGlobe 配置
 
-## Overview of proposed SPIN module
+当前仓库已按以下目标配置：
+- 数据集根目录：`D:/project/pythonProject/Road_Identification/SAM2-UNet/deepglobe`
+- 训练轮数：`80`
+- 每轮验证一次
+- `checkpoints/latest.pth.tar` 每轮覆盖保存
+- `checkpoints/best.pth.tar` 保存验证集最高 `mIoU`
+- 每 `5` 轮额外保存 `checkpoints/epoch_XXX.pth.tar`
+- TensorBoard 日志目录：`logs/spin_时间戳`
+- 日志记录：`loss`、`background_iou`、`road_iou`、`precision`、`recall`，且包含训练集和验证集
 
-We build graphs in two spaces: (a) spatial space and (b) a projected latent interaction space from feature maps. Graph reasoning in spatial space extracts connectivity between the road segments, whereas reasoning over interaction space delineates roads from other topographies. Nodes connected with lines in (a) denote how road segments are modeled to understand connectivity in the spatial space. Regions marked with different colors in (b) denote how different semantics are segregated for better road delineation in the interaction space.
+## 环境安装
 
-<p align="center">
-<img src="images/ICRA-intro_fig.jpeg" width="600"/>
+建议使用 Python `3.10` 或 `3.11`。
 
-## Architecture of proposed SPIN module and SPIN pyramid
-  
-The architecture of our proposed method. (a) We perform graph reasoning in both spatial and interaction space. (b) The proposed SPIN pyramid module which performs SPIN graph reasoning at multiple scales 1, 1/2, and 1/4 of original feature map to extract multi-scale long-range contextual information.
+1. 安装与你本机 CUDA 版本匹配的 PyTorch。
+2. 安装项目其余依赖：
 
-<p align="center">
-<img src="images/ICCV_21-Hybrid_GR_v1.jpeg" width="600"/>
-  
-  
-## Proposed network for road segmentation from aerial images
-  
-The input images are first feed forwarded to a feature extractor block followed by a bottleneck consisting of stack of two hourglass modules. Then, the output of bottleneck is passed through a segmentation branch which consists of conv layers, our SPIN pyramid and a final classification layer to get the road segmentation map.
-<p align="center">
-<img src="images/ICCV_21-SPIN_v1.jpeg" width="600"/>
+```powershell
+pip install -r requirements-windows.txt
+```
 
-  
-## A qualitative comparison between our SPIN Road Mapper and the SOTA methods
-<p align="center">
-<img src="images/ICCV_21-qualitative.jpg" width="600"/>
+如果你还没安装 PyTorch，可先到官方命令生成页选择 Windows + CUDA：
+`https://pytorch.org/get-started/locally/`
 
-## Reproducing the results
-### 1. Donwloading the datasets
+## 训练命令
 
-In this paper we used two publically available road segmentation datasets, namely (1) Massachusetts road dataset, and (2) DeepGlobe dataset.
+```powershell
+python train_mtl.py --config config.json --model_name StackHourglassNetMTL --dataset deepglobe --exp deepglobe_spin
+```
 
-The Massachusetts road dataset can be downloaded from: [Click Here](https://www.cs.toronto.edu/~vmnih/data/)
+## TensorBoard
 
-## Complete segmentation network with SPIN module
-The main module can be found at
-  modelsstack_module.py/StackHourglassNetMTL_DGCNv4
+```powershell
+tensorboard --logdir logs
+```
 
+启动后在浏览器打开本机 TensorBoard 地址即可查看训练和验证曲线。
