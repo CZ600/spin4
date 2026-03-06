@@ -1,0 +1,37 @@
+🔍 开始计算评估指标...
+📂 预测文件夹: /root/autodl-tmp/spin4/output/predict
+📂 标签文件夹: /root/autodl-fs/Deepglobe/deepglobe/test/seg
+==================================================
+📈 计算基本指标 (Precision, Accuracy, mIoU, F1)...
+📊 开始计算基本指标，共 624 张预测图
+混淆矩阵统计:
+TP: 0
+FP: 0
+FN: 27074700
+TN: 627236724
+Total: 654311424
+
+📊 计算各类别IoU...
+
+🔗 计算连通率...
+
+Processing time: 9.98s
+Valid pairs: 624
+Average connectivity: 0.0000
+
+
+==================================================
+🎉 评估指标计算完成！
+==================================================
+🎯 Precision (精确率): 0.0000
+🎯 Accuracy (准确率):  0.9586
+🎯 Recall (召回率):    0.0000
+🎯 F1 Score:           0.0000
+🎯 mIoU:               0.4793
+🎯 Road IoU:           0.0000
+🎯 Background IoU:     0.9586
+🎯 Connectivity (连通率): 0.0000
+==================================================
+📄 结果已保存到: /root/autodl-tmp/spin4/output/evaluation_metrics.txt
+
+⏱️ 评估总耗时: 39.82 秒

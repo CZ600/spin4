@@ -1,0 +1,18 @@
+🚀 开始SPIN4模型预测
+📂 输入目录: dataset/test/data
+📂 标签目录: dataset/test/seg
+💾 输出目录: /root/autodl-tmp/spin4/output
+🎯 模型: /root/autodl-tmp/spin4/checkpoints/best.pth.tar
+📊 阈值: 0.5
+==================================================
+✅ 模型加载成功: /root/autodl-tmp/spin4/checkpoints/best.pth.tar
+📱 设备: cuda
+Traceback (most recent call last):
+  File "/root/autodl-tmp/spin4/predict_spin4.py", line 354, in <module>
+    main()
+  File "/root/autodl-tmp/spin4/predict_spin4.py", line 342, in main
+    predictor.predict_batch(
+  File "/root/autodl-tmp/spin4/predict_spin4.py", line 224, in predict_batch
+    image_files = [f for f in os.listdir(input_dir) if f.endswith('_sat.jpg')]
+                              ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'dataset/test/data'

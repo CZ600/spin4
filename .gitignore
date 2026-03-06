@@ -9,3 +9,5 @@ output/*
 *.csv
 *.tar
 *.zip
+__pycache__/
+checkpoints/

@@ -4,7 +4,7 @@
   "task2_classes": 37,
   "task1_weight": 1,
   "task2_weight": 1,
-  "train_batch_size": 20,
+  "train_batch_size": 36,
   "val_batch_size": 2,
   "refinement": 3,
   "train_dataset": {
@@ -16,7 +16,7 @@
       "crop_size": 256
     },
     "deepglobe": {
-      "dir": "D:/project/pythonProject/Road_Identification/SAM2-UNet/deepglobe",
+      "dir": "/root/autodl-fs/Deepglobe/deepglobe",
       "set": "train",
       "image_dir": "data",
       "gt_dir": "seg",
@@ -51,7 +51,7 @@
       "crop_size": 650
     },
     "deepglobe": {
-      "dir": "D:/project/pythonProject/Road_Identification/SAM2-UNet/deepglobe",
+      "dir": "/root/autodl-fs/Deepglobe/deepglobe",
       "set": "val",
       "image_dir": "data",
       "gt_dir": "seg",
@@ -85,13 +85,13 @@
   },
   "trainer": {
     "total_epochs": 80,
-    "save_dir": "./checkpoints",
-    "log_dir": "./logs",
+    "save_dir": "/root/autodl-tmp/spin4/checkpoints",
+    "log_dir": "/root/tf-logs/logs",
     "run_name_prefix": "spin",
     "iter_size": 1,
     "test_freq": 1,
     "checkpoint_interval": 5,
-    "train_num_workers": 2,
-    "val_num_workers": 2
+    "train_num_workers": 8,
+    "val_num_workers": 8
   }
 }
