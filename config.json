@@ -4,8 +4,8 @@
     "task2_classes": 37,
     "task1_weight": 1,
     "task2_weight": 1,
-    "train_batch_size": 16,
-    "val_batch_size": 4,
+    "train_batch_size": 4,
+    "val_batch_size": 2,
     "refinement":3,
     "train_dataset": {
         "spacenet":{
@@ -22,7 +22,14 @@
             "gt_suffix": ".png",
             "crop_size": 256
         },
-        "crop_size": 256,
+        "myroad":{
+            "dir": "dataset",
+            "set": "train",
+            "image_suffix": "_sat.jpg",
+            "gt_suffix": "_mask.png",
+            "crop_size": 512
+        },
+        "crop_size": 512,
         "augmentation": true,
         "mean" : "[70.95016901, 71.16398124, 71.30953645]",
         "std" : "[34.00087859, 35.18201658, 36.40463264]",
@@ -46,6 +53,13 @@
             "gt_suffix": ".png",
             "crop_size": 512
         },
+        "myroad":{
+            "dir": "dataset",
+            "set": "val",
+            "image_suffix": "_sat.jpg",
+            "gt_suffix": "_mask.png",
+            "crop_size": 512
+        },
         "crop_size": 512,
         "augmentation": false,
         "mean" : "[70.95016901, 71.16398124, 71.30953645]",
@@ -59,12 +73,12 @@
         "lr": 0.01,
         "d_lr": 0.0001,
         "lr_step": 0.1,
-        "lr_drop_epoch": "[50,90,110]"
+        "lr_drop_epoch": "[50,90,70]"
     },
     "trainer": {
-        "total_epochs": 120,
-        "save_dir": "./deepglobe_exp/",
+        "total_epochs": 80,
+        "save_dir": "./myroadExp/",
         "iter_size": 1,
-        "test_freq": 5
+        "test_freq": 10
     }
 }

@@ -1,0 +1,51 @@
+{"pthroad": "/autodl-fs/data/SPIN_RoadMapper/checkpoints/",
+  "pathSet":
+  {
+    "NS00":
+          {
+            "pthName": "checkpoint_epoch_080_NS00.pth.tar",
+            "outputRoad": "/autodl-fs/data/output/NS00/"
+          },
+  "NS02":
+          {
+            "pthName": "checkpoint_epoch_080_NS02.pth.tar",
+            "outputRoad": "/autodl-fs/data/output/NS02/"
+          },
+  "NS04":
+          {
+            "pthName": "checkpoint_epoch_080_NS04.pth.tar",
+            "outputRoad": "/autodl-fs/data/output/NS04/"
+          },
+  "NS06":
+          {
+            "pthName": "checkpoint_epoch_080_NS06.pth.tar",
+            "outputRoad": "/autodl-fs/data/output/NS06/"
+          },
+  "NS08":
+          {
+            "pthName": "checkpoint_epoch_080_NS08.pth.tar",
+            "outputRoad": "/autodl-fs/data/output/NS08/"
+            }
+  },
+  "DataSet":
+          {
+            "WHU":
+            {
+              "dataRoad": "/autodl-fs/data/DataSet/WHU-RRoad/test/data",
+              "segRoad": "/autodl-fs/data/DataSet/WHU-RRoad/test/seg",
+              "outputPth": "WHU"
+            },
+            "Massachusetts":{
+              "dataRoad": "/root/autodl-tmp/Massachusetts/test/data",
+              "segRoad": "/root/autodl-tmp/Massachusetts/test/seg",
+              "outputPth": "Massachusetts"
+            },
+            "DarwDataset":{
+              "dataRoad": "/root/autodl-tmp/DarwDataset/test/data",
+              "segRoad": "/root/autodl-tmp/DarwDataset/test/seg",
+              "outputPth": "DarwDataset"
+            }
+
+          }
+
+}

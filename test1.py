@@ -1,5 +1,6 @@
 from __future__ import print_function
-
+import sys
+sys.path.append('model')
 import argparse
 import json
 import os
@@ -12,7 +13,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torch.utils.data as data
 from model.models import MODELS
-from road_dataset import DeepGlobeDataset, SpacenetDataset
+from road_dataset import DeepGlobeDataset, SpacenetDataset,MyRoadData
 from torch.autograd import Variable
 from torch.optim.lr_scheduler import MultiStepLR
 from utils.loss import CrossEntropyLoss2d, mIoULoss
@@ -20,7 +21,7 @@ from utils import util
 from utils import viz_util
 from utils.util import relaxed_f1
 
-__dataset__ = {"spacenet": SpacenetDataset, "deepglobe": DeepGlobeDataset}
+__dataset__ = {"spacenet": SpacenetDataset, "deepglobe": DeepGlobeDataset,"myroad": MyRoadData}
 
 
 parser = argparse.ArgumentParser()
@@ -185,7 +186,7 @@ def test(epoch):
     global best_accuracy
     global best_miou
     global best_road
-    chec = "/media/lidan/ssd/Chaminda/road_connectivity/deepglobe_exp/dg_stak_mtl/model_best.pth.tar"
+    chec = "myroadExp/expriment/model_best.pth.tar"
     # import pdb
     # pdb.set_trace()
     checkpoint = torch.load(chec)

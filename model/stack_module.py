@@ -6,7 +6,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from model.glore import GloRe_Unit_2D, GloRe_Unit_SE_2D
+# from model.glore import GloRe_Unit_2D, GloRe_Unit_SE_2D
 from model.SPIN import spin
 import cv2
 from model.inception_glore import Inception_GloRe_Unit_2D, Inception_GloRe_Unit_2D_v2

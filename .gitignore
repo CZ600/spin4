@@ -1,0 +1,11 @@
+.dataset/
+dataset/
+dataset/*
+output/
+output/*    
+*.png
+*.jpg
+*.tif
+*.csv
+*.tar
+*.zip
